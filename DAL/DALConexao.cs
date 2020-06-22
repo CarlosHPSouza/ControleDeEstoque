@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace DAL
 {
-    class DALConexao
+    public class DALConexao
     {
         private String _stringConexao;
         private SqlConnection _conexao;
