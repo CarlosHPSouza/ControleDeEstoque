@@ -47,6 +47,8 @@
       <DependentUpon>ControleDeEstoqueDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="DadosDaConexão.cs" />
+    <Compile Include="DALCategoria.cs" />
+    <Compile Include="DALConexao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
