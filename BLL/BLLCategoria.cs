@@ -6,7 +6,7 @@ using System.Data;
 
 namespace BLL
 {
-    class BLLCategoria
+    public class BLLCategoria
     {
         private DALConexao conexao;
         public BLLCategoria(DALConexao cx)
