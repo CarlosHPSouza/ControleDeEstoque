@@ -12,18 +12,11 @@ namespace Modelo
             this.SCatNome = "";
         }
 
-        public ModeloSubCategoria(int sCatCod, int catCod, string sCatNome)
+        public ModeloSubCategoria(int catcod, int scatcod, String snome)
         {            
-            this.CatCod = catCod;
-            this.SCatCod = sCatCod;
-            this.SCatNome = sCatNome;
-        }
-
-        private int cat_cod;
-        public int CatCod
-        {
-            get { return this.cat_cod; }
-            set { this.cat_cod = value; }
+            this.CatCod = catcod;
+            this.SCatCod = scatcod;
+            this.SCatNome = snome;
         }
 
         private int scat_cod;
@@ -33,14 +26,20 @@ namespace Modelo
             set { this.scat_cod = value; }
         }
 
-       
+        private int cat_cod;
+        public int CatCod
+        {
+            get { return this.cat_cod; }
+            set { this.cat_cod = value; }
+        }
+
         private String scat_nome;
         public String SCatNome
         {
             get { return this.scat_nome; }
             set { this.scat_nome = value; }
-        }
-
+        }              
+       
 
     }
 }

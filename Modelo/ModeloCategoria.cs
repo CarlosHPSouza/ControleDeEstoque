@@ -10,13 +10,15 @@ namespace Modelo
         {
             this.CatCod = 0;
             this.CatNome = "";
+            
         }
 
-        public ModeloCategoria(int catCod, string catNome)
+        public ModeloCategoria(int catcod, String nome)
         {
-            CatCod = catCod;
-            CatNome = catNome;
+            this.CatCod = catcod;
+            this.CatNome = nome;
         }
+
 
         private int cat_cod;
         public int CatCod

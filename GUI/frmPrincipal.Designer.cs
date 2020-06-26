@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class FormPrincipal
+    partial class frmPrincipal
     {
         /// <summary>
         /// Required designer variable.
@@ -93,6 +93,7 @@
             this.subCategoriaToolStripMenuItem.Name = "subCategoriaToolStripMenuItem";
             this.subCategoriaToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.subCategoriaToolStripMenuItem.Text = "SubCategoria";
+            this.subCategoriaToolStripMenuItem.Click += new System.EventHandler(this.subCategoriaToolStripMenuItem_Click);
             // 
             // unidadeDeMedidaToolStripMenuItem
             // 
@@ -149,6 +150,7 @@
             this.subCategoriaToolStripMenuItem1.Name = "subCategoriaToolStripMenuItem1";
             this.subCategoriaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.subCategoriaToolStripMenuItem1.Text = "SubCategoria";
+            this.subCategoriaToolStripMenuItem1.Click += new System.EventHandler(this.subCategoriaToolStripMenuItem1_Click);
             // 
             // unidadeDeMedidaToolStripMenuItem1
             // 
@@ -203,17 +205,16 @@
             this.sobreToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.sobreToolStripMenuItem.Text = "Sobre";
             // 
-            // FormPrincipal
+            // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "FormPrincipal";
+            this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de Controle de Estoque";
-            this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
