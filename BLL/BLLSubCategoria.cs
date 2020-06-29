@@ -60,7 +60,7 @@ namespace BLL
         public ModeloSubCategoria CarregaModeloSubCategoria(int codigo)
         {
             DALSubCategoria DALobj = new DALSubCategoria(conexao);
-            return DALobj.CarregaModeloCategoria(codigo);
+            return DALobj.CarregaModeloSubCategoria(codigo);
         }
     }
 }

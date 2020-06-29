@@ -1,32 +1,31 @@
-﻿using Modelo;
+﻿using DAL;
+using Modelo;
 using System;
 using System.Data;
 using System.Data.SqlClient;
 
 
-namespace DAL
+namespace BLL
 {
-    public class DALSubCategoria
+    public class DALUnidadeDeMedida
     {
         private DALConexao conexao;
 
-        public DALSubCategoria(DALConexao cx)
+        public DALUnidadeDeMedida(DALConexao cx)
         {
             this.conexao = cx;
         }
-
-        public void Incluir(ModeloSubCategoria modelo)
+        public void Incluir(ModeloUnidadeDeMedida modelo)
         {
             try
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conexao.ObjetoConexao;
-                cmd.CommandText = "insert into subcategoria(cat_cod, scat_nome) values (@catcod, @nome); select @@IDENTITY;";
-                cmd.Parameters.AddWithValue("@catcod", modelo.CatCod);
-                cmd.Parameters.AddWithValue("@nome", modelo.SCatNome);
+                cmd.CommandText = "insert into undmedida(umed_nome) values (@nome); select @@IDENTITY;";
+                cmd.Parameters.AddWithValue("@nome", modelo.UmedNome);
                 conexao.Conectar();
-                modelo.SCatCod = Convert.ToInt32(cmd.ExecuteScalar());
-                
+                modelo.UmedCod = Convert.ToInt32(cmd.ExecuteScalar());
+
             }
             catch (Exception erro)
             {
@@ -38,20 +37,19 @@ namespace DAL
             }
         }
 
-        public void Alterar(ModeloSubCategoria modelo)
+        public void Alterar(ModeloUnidadeDeMedida modelo)
         {
 
             try
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conexao.ObjetoConexao;
-                cmd.CommandText = "update subcategoria set scat_nome = @nome, cat_cod = @catcod where scat_cod = @scatcod;";
-                cmd.Parameters.AddWithValue("@nome", modelo.SCatNome);
-                cmd.Parameters.AddWithValue("@catcod", modelo.CatCod);
-                cmd.Parameters.AddWithValue("@scatcod", modelo.SCatCod);
+                cmd.CommandText = "update undmedida umed_nome = @nome where umed_cod = @cod;";
+                cmd.Parameters.AddWithValue("@nome", modelo.UmedNome);
+                cmd.Parameters.AddWithValue("@cod", modelo.UmedCod);
                 conexao.Conectar();
                 cmd.ExecuteNonQuery();
-                
+
             }
             catch (Exception erro)
             {
@@ -62,17 +60,18 @@ namespace DAL
                 conexao.Desconectar();
             }
         }
+
         public void Excluir(int codigo)
         {
             try
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conexao.ObjetoConexao;
-                cmd.CommandText = "delete from subcategoria where scat_cod = @codigo;";
+                cmd.CommandText = "delete from unmedida where umed_cod = @codigo;";
                 cmd.Parameters.AddWithValue("@codigo", codigo);
                 conexao.Conectar();
                 cmd.ExecuteNonQuery();
-                
+
             }
             catch (Exception erro)
             {
@@ -88,31 +87,32 @@ namespace DAL
         public DataTable Localizar(String valor)
         {
             DataTable tabela = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter("select sc.scat_cod, sc.scat_nome, sc.cat_cod, c.cat_nome " +
-                " from subcategoria sc inner join categoria c on sc.cat_cod = c.cat_cod where scat_nome like '%" +
+            SqlDataAdapter da = new SqlDataAdapter("select * from undmedida where umed_nome like '%" +
                 valor + "%'", conexao.StringConexao);
             da.Fill(tabela);
             return tabela;
         }
 
-        public ModeloSubCategoria CarregaModeloSubCategoria(int codigo)
+        public ModeloUnidadeDeMedida CarregaUnidadeDeMedida(int codigo)
         {
-            ModeloSubCategoria modelo = new ModeloSubCategoria();
+            ModeloUnidadeDeMedida modelo = new ModeloUnidadeDeMedida();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conexao.ObjetoConexao;
-            cmd.CommandText = "select * from subcategoria where scat_cod = @codigo";
+            cmd.CommandText = "select * from undmedida where umed_cod = @codigo";
             cmd.Parameters.AddWithValue("@codigo", codigo);
             conexao.Conectar();
             SqlDataReader registro = cmd.ExecuteReader();
             if (registro.HasRows)
             {
                 registro.Read();
-                modelo.CatCod = Convert.ToInt32(registro["cat_cod"]);
-                modelo.SCatNome = Convert.ToString(registro["scat_nome"]);
-                modelo.SCatCod = Convert.ToInt32(registro["scat_cod"]);
+                modelo.UmedCod = Convert.ToInt32(registro["umed_cod"]);
+                modelo.UmedNome = Convert.ToString(registro["umed_nome"]);
+
             }
             conexao.Desconectar();
             return modelo;
         }
+
+
     }
 }
