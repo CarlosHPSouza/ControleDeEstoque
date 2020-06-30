@@ -36,7 +36,7 @@ namespace BLL
                 throw new Exception("O nome da Unidade de medida é obrigatorio");
             }
             DALUnidadeDeMedida DALobj = new DALUnidadeDeMedida(conexao);
-            DALobj.Incluir(modelo);
+            DALobj.Alterar(modelo);
         }
         public void Excluir(int codigo)
         {

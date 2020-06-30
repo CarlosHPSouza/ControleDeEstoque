@@ -44,7 +44,7 @@ namespace BLL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conexao.ObjetoConexao;
-                cmd.CommandText = "update undmedida umed_nome = @nome where umed_cod = @cod;";
+                cmd.CommandText = "update undmedida set umed_nome = @nome where umed_cod = @cod;";
                 cmd.Parameters.AddWithValue("@nome", modelo.UmedNome);
                 cmd.Parameters.AddWithValue("@cod", modelo.UmedCod);
                 conexao.Conectar();
@@ -67,7 +67,7 @@ namespace BLL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conexao.ObjetoConexao;
-                cmd.CommandText = "delete from unmedida where umed_cod = @codigo;";
+                cmd.CommandText = "delete from undmedida where umed_cod = @codigo;";
                 cmd.Parameters.AddWithValue("@codigo", codigo);
                 conexao.Conectar();
                 cmd.ExecuteNonQuery();
