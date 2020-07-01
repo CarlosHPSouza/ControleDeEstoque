@@ -126,6 +126,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Name = "frmCadastroSubCategoria";
+            this.ShowIcon = false;
             this.Text = "Cadastro de SubCategoria";
             this.Load += new System.EventHandler(this.frmCadastroSubCategoria_Load);
             this.pnDados.ResumeLayout(false);

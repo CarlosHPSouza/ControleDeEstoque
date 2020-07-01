@@ -5,20 +5,6 @@ namespace Modelo
 {
     public class ModeloSubCategoria
     {
-        public ModeloSubCategoria()
-        {
-            this.CatCod = 0;
-            this.SCatCod = 0;
-            this.SCatNome = "";
-        }
-
-        public ModeloSubCategoria(int catcod, int scatcod, String snome)
-        {            
-            this.CatCod = catcod;
-            this.SCatCod = scatcod;
-            this.SCatNome = snome;
-        }
-
         private int scat_cod;
         public int SCatCod
         {
@@ -38,8 +24,20 @@ namespace Modelo
         {
             get { return this.scat_nome; }
             set { this.scat_nome = value; }
-        }              
-       
+        }
+        public ModeloSubCategoria()
+        {
+            this.CatCod = 0;
+            this.SCatCod = 0;
+            this.SCatNome = "";
+        }
+
+        public ModeloSubCategoria(int catcod, int scatcod, String snome)
+        {
+            this.CatCod = catcod;
+            this.SCatCod = scatcod;
+            this.SCatNome = snome;
+        }
 
     }
 }

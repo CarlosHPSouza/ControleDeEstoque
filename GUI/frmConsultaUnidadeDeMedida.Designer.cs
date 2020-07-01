@@ -84,6 +84,7 @@
             this.Controls.Add(this.txtValor);
             this.Controls.Add(this.label1);
             this.Name = "frmConsultaUnidadeDeMedida";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta Unidade De Medida";
             this.Load += new System.EventHandler(this.UnidadeDeMedida_Load);

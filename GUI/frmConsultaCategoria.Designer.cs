@@ -43,7 +43,6 @@
             this.label1.Size = new System.Drawing.Size(52, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Categoria";
-            
             // 
             // txtValor
             // 
@@ -51,7 +50,6 @@
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(643, 20);
             this.txtValor.TabIndex = 1;
-            
             // 
             // btLocalizar
             // 
@@ -74,7 +72,6 @@
             this.dgvDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDados.Size = new System.Drawing.Size(759, 481);
             this.dgvDados.TabIndex = 3;
-            
             this.dgvDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDados_CellDoubleClick);
             // 
             // frmConsultaCategoria
@@ -87,6 +84,7 @@
             this.Controls.Add(this.txtValor);
             this.Controls.Add(this.label1);
             this.Name = "frmConsultaCategoria";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta Categoria";
             this.Load += new System.EventHandler(this.frmConsultaCategoria_Load);

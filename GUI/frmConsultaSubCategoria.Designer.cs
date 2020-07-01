@@ -84,6 +84,7 @@
             this.Controls.Add(this.txtValor);
             this.Controls.Add(this.label1);
             this.Name = "frmConsultaSubCategoria";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta SubCategoria";
             this.Load += new System.EventHandler(this.frmConsultaSubCategoria_Load);

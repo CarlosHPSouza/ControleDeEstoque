@@ -121,6 +121,7 @@
             this.Controls.Add(this.pnBotoes);
             this.Controls.Add(this.pnDados);
             this.Name = "frmModeloDeFormularioDeCadastro";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modelo De Formulario De Cadastro";
             this.Load += new System.EventHandler(this.frmModeloDeFormularioDeCadastro_Load);
