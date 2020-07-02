@@ -49,6 +49,7 @@
     <Compile Include="DadosDaConexão.cs" />
     <Compile Include="DALCategoria.cs" />
     <Compile Include="DALConexao.cs" />
+    <Compile Include="DALProduto.cs" />
     <Compile Include="DALSubCategoria.cs" />
     <Compile Include="DALUnidadeDeMedida.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
