@@ -48,9 +48,18 @@ namespace GUI
         }
 
         private void unidadeDeMedidaToolStripMenuItem1_Click(object sender, EventArgs e)
-        {frmConsultaUnidadeDeMedida f = new frmConsultaUnidadeDeMedida();
+        {
+            frmConsultaUnidadeDeMedida f = new frmConsultaUnidadeDeMedida();
+            f.ShowDialog();
+            f.Dispose();
+        }
+
+        private void produtoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCadastroProduto f = new frmCadastroProduto();
             f.ShowDialog();
             f.Dispose();
         }
     }
+    
 }
